@@ -5,6 +5,7 @@ Comment.attachSchema new SimpleSchema {
     type: String
   email:
     type: String
+    regEx: SimpleSchema.RegEx.Email
   message:
     type: String
   post_id:
