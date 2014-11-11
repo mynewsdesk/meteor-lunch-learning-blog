@@ -1,0 +1,11 @@
+<template name="PostEdit">
+  <div class="container">
+    <div class="row-fluid">
+      <h1>Edit Post</h1>
+      {{#autoForm collection="Post" doc=this type="update" id="edit-post-form"}}
+        {{> PostFields}}
+        <button type="submit" class="btn btn-primary">Update</button>
+      {{/autoForm}}
+    </div>
+  </div>
+</template>

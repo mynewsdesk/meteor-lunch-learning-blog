@@ -1,0 +1,23 @@
+<template name="PostShow">
+  <div class="container">
+    <div class="row-fluid">
+      <h1>{{title}}</h1>
+      {{#markdown}}{{body}}{{/markdown}}
+      <h2>Comments</h2>
+      {{#each comments}}
+        <div class="comment">
+          <strong>{{author}}</strong> <small>says...</small><br>
+          {{#markdown}}{{message}}{{/markdown}}
+        </div>
+      {{/each}}
+      <h3>Add a Comment</h3>
+      {{#autoForm collection="Comment" type="insert" id="new-comment-form"}}
+        {{> afQuickField name="author"}}
+        {{> afQuickField name="email"}}
+        {{> afQuickField name="message" rows=4}}
+        {{> afFieldInput type="hidden" name="post_id" value=_id}}
+        <button type="submit" class="btn btn-primary">Add Comment</button>
+      {{/autoForm}}
+    </div>
+  </div>
+</template>

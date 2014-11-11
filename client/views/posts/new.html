@@ -1,0 +1,14 @@
+<template name="PostNew">
+  <div class="container">
+    <div class="row-fluid">
+      <h1>New Post</h1>
+      {{#autoForm collection="Post" type="insert" id="new-post-form"}}
+        {{> PostFields}}
+        <button type="submit" class="btn btn-primary">
+          <span class="glyphicon glyphicon-plus"></span>
+          Create
+        </button>
+      {{/autoForm}}
+    </div>
+  </div>
+</template>
